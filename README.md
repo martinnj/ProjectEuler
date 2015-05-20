@@ -5,6 +5,7 @@ Solutions for project euler: https://projecteuler.net/
 1-2
 
 To get the result of a problem, open GHCI and type:
+
     :l euler.hs
     problem<N>res
 
