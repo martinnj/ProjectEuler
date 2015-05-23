@@ -70,3 +70,7 @@ problem5res = head [x | x <- [0,20..], let ys = [1..20], evenly x ys]
 sumOfSquares = sum [x^2 | x <- [1..100]]
 squareOfSums = (sum [1..100])^2
 problem6res = abs $ sumOfSquares - squareOfSums 
+
+{- Problem 7 -}
+-- Primes reused from problem 3.
+problem7res = primes !! 10000
