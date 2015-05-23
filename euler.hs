@@ -55,3 +55,12 @@ problem3res = last (primeFactors problem3input)
 {- Problem 4 -}
 palindromes = [x | y <- [100..999], z <- [100..999], let x = y*z, (show x) == (reverse $ show x)]
 problem4res = maximum palindromes
+
+
+{- Problem 5 -}
+evenly :: Integer -> [Integer] -> Bool
+evenly 0 _ = False
+evenly n [] = True
+evenly n (x:xs) = (n `mod` x == 0) && evenly n xs
+
+problem5res = head [x | x <- [0,20..], let ys = [1..20], evenly x ys]
