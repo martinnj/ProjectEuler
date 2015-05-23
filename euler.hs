@@ -64,3 +64,9 @@ evenly n [] = True
 evenly n (x:xs) = (n `mod` x == 0) && evenly n xs
 
 problem5res = head [x | x <- [0,20..], let ys = [1..20], evenly x ys]
+
+
+{- Problem 6 -}
+sumOfSquares = sum [x^2 | x <- [1..100]]
+squareOfSums = (sum [1..100])^2
+problem6res = abs $ sumOfSquares - squareOfSums 
