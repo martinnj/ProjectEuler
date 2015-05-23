@@ -51,3 +51,7 @@ primeFactors n = factor n primes
         | otherwise      =     factor n ps
  
 problem3res = last (primeFactors problem3input)
+
+{- Problem 4 -}
+palindromes = [x | y <- [100..999], z <- [100..999], let x = y*z, (show x) == (reverse $ show x)]
+problem4res = maximum palindromes
