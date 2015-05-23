@@ -23,3 +23,31 @@ fib 1 = 1
 fib n = fib (n-1) + fib (n-2)
 fibList = [fib x | x <- [0..34], ((fib x) `mod` 2) == 0]
 problem2res = foldr (+) 0 fibList
+
+
+{- Problem 3 -}
+problem3input = 600851475143
+
+-- No longer used.
+isPrime :: Integer -> Bool
+isPrime n
+    | n <= 2 = False
+    | n `mod` 2 == 0 = False
+    | otherwise = not(foldr (||) False boolList)
+        where  limit = round $ sqrt(fromIntegral n)
+               ms = [3..limit]
+               boolList = map (\x -> n `mod` x == 0) ms
+
+-- Below solution is from https://wiki.haskell.org after
+-- I had termination problems with my old one.
+primes = 2 : filter (null . tail . primeFactors) [3,5..]
+
+primeFactors :: Integer -> [Integer]
+primeFactors n = factor n primes
+  where
+    factor n (p:ps) 
+        | p*p > n        = [n]
+        | n `mod` p == 0 = p : factor (n `div` p) (p:ps)
+        | otherwise      =     factor n ps
+ 
+problem3res = last (primeFactors problem3input)
