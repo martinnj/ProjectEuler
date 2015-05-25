@@ -90,3 +90,8 @@ problem9res = product $ head $ triples 1000
 
 {- Problem 10 -}
 problem10res = sum $ takeWhile (\x -> x < 2000000) primes
+
+{- Problem 11 -}
+-- TODO
+
+{- Problem 12 -}
