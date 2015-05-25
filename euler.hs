@@ -87,3 +87,6 @@ problem8res = maximum $ foo1' thousandDigits
 
 triples d = [[a,b,c] | c <- [1..d], b <- [1..c], a <- [1..b], a^2+b^2==c^2, a+b+c==d]
 problem9res = product $ head $ triples 1000
+
+{- Problem 10 -}
+problem10res = sum $ takeWhile (\x -> x < 2000000) primes
