@@ -82,3 +82,8 @@ foo1' ns = if length(ns) >= 13
           then concat [[product $ (map digitToInt (take 13 $ ns))], foo1' $ tail ns]
           else [0]
 problem8res = maximum $ foo1' thousandDigits
+
+{- Problem 9 -}
+
+triples d = [[a,b,c] | c <- [1..d], b <- [1..c], a <- [1..b], a^2+b^2==c^2, a+b+c==d]
+problem9res = product $ head $ triples 1000
