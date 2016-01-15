@@ -46,11 +46,11 @@ primes = 2 : filter (null . tail . primeFactors) [3,5..]
 primeFactors :: Integer -> [Integer]
 primeFactors n = factor n primes
   where
-    factor n (p:ps) 
+    factor n (p:ps)
         | p*p > n        = [n]
         | n `mod` p == 0 = p : factor (n `div` p) (p:ps)
         | otherwise      =     factor n ps
- 
+
 problem3res = last (primeFactors problem3input)
 
 {- Problem 4 -}
@@ -70,7 +70,7 @@ problem5res = head [x | x <- [0,20..], let ys = [1..20], evenly x ys]
 {- Problem 6 -}
 sumOfSquares = sum [x^2 | x <- [1..100]]
 squareOfSums = (sum [1..100])^2
-problem6res = abs $ sumOfSquares - squareOfSums 
+problem6res = abs $ sumOfSquares - squareOfSums
 
 {- Problem 7 -}
 -- Primes reused from problem 3.
